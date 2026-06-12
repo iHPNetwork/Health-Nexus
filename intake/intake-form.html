@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workflow Fit Blueprint — Practice Intake</title>
+<style>
+  :root { --navy:#143d59; --teal:#1d5b7a; --line:#d5e3ec; --bg:#f3f7fa; --err:#b3261e; }
+  * { box-sizing: border-box; }
+  body { font-family: 'Helvetica Neue', Arial, sans-serif; color:#222; background:#eef3f6; margin:0; line-height:1.5; }
+  .wrap { max-width:640px; margin:0 auto; padding:28px 18px 60px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:28px 26px; box-shadow:0 1px 4px rgba(0,0,0,.05); }
+  h1 { color:var(--navy); font-size:22px; margin:0 0 6px; }
+  .sub { color:#555; font-size:14px; margin:0 0 20px; }
+  .brand { letter-spacing:2px; text-transform:uppercase; color:var(--teal); font-size:12px; font-weight:700; }
+  .rule { height:4px; width:70px; background:var(--navy); margin:10px 0 18px; }
+  label { display:block; font-weight:600; font-size:14px; margin:16px 0 4px; color:#143d59; }
+  .hint { font-weight:400; color:#777; font-size:12.5px; display:block; margin-top:2px; }
+  input, select { width:100%; padding:10px 12px; font-size:15px; border:1px solid #bcc8d0; border-radius:5px; }
+  input:focus, select:focus { outline:none; border-color:var(--teal); box-shadow:0 0 0 2px rgba(29,91,122,.15); }
+  .inline { display:flex; gap:10px; }
+  .inline > div { flex:1; }
+  .suffix { position:relative; }
+  .suffix .u { position:absolute; right:12px; top:11px; color:#888; font-size:14px; }
+  .err { color:var(--err); font-size:12.5px; margin-top:4px; display:none; }
+  .field.invalid input { border-color:var(--err); }
+  .field.invalid .err { display:block; }
+  button { margin-top:26px; width:100%; background:var(--navy); color:#fff; border:none; padding:14px; font-size:16px; font-weight:600; border-radius:6px; cursor:pointer; }
+  button:hover { background:#0f2f47; }
+  .note { background:var(--bg); border:1px solid var(--line); border-radius:6px; padding:12px 14px; font-size:13px; color:#445; margin-top:18px; }
+  .ok { display:none; background:#e8f5e9; border:1px solid #b5dcb8; color:#1b5e20; padding:16px; border-radius:6px; margin-top:18px; font-size:14px; }
+  .privacy { font-size:12px; color:#888; margin-top:18px; text-align:center; }
+  fieldset { border:none; padding:0; margin:0; }
+  legend { font-weight:700; color:var(--teal); font-size:13px; text-transform:uppercase; letter-spacing:1px; margin:22px 0 2px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="card">
+    <div class="brand">[Your Firm Name]</div>
+    <div class="rule"></div>
+    <h1>Workflow Fit Blueprint — Practice Intake</h1>
+    <p class="sub">Five numbers. No EHR access. No patient data. This is everything needed to build your
+      uncaptured-revenue analysis. Takes about three minutes.</p>
+
+    <form id="intakeForm" novalidate>
+      <legend>About the practice</legend>
+      <div class="field" data-validate="text">
+        <label for="practice">Practice name
+          <span class="hint">As it should appear on your report.</span></label>
+        <input type="text" id="practice" name="practice" autocomplete="organization" required>
+        <div class="err">Please enter your practice name.</div>
+      </div>
+
+      <div class="inline">
+        <div class="field" data-validate="text">
+          <label for="contact">Your name</label>
+          <input type="text" id="contact" name="contact" autocomplete="name" required>
+          <div class="err">Please enter your name.</div>
+        </div>
+        <div class="field" data-validate="int" data-min="1" data-max="200">
+          <label for="physicians">Physicians</label>
+          <input type="number" id="physicians" name="physicians" min="1" max="200" required>
+          <div class="err">Enter a whole number (1–200).</div>
+        </div>
+      </div>
+
+      <div class="field" data-validate="email">
+        <label for="email">Email <span class="hint">Where we send your Blueprint.</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+        <div class="err">Please enter a valid email address.</div>
+      </div>
+
+      <legend>The five numbers</legend>
+
+      <div class="field" data-validate="int" data-min="1" data-max="200000">
+        <label for="panel">1. Active patient panel size
+          <span class="hint">Total active patients across the practice.</span></label>
+        <input type="number" id="panel" name="panel" min="1" max="200000" required>
+        <div class="err">Enter a whole number greater than 0.</div>
+      </div>
+
+      <div class="field" data-validate="pct">
+        <label for="pctMedicare">2. Percent Medicare
+          <span class="hint">Share of your panel that is Medicare (any type).</span></label>
+        <div class="suffix"><input type="number" id="pctMedicare" name="pctMedicare" min="0" max="100" step="0.1" required><span class="u">%</span></div>
+        <div class="err">Enter a percentage between 0 and 100.</div>
+      </div>
+
+      <div class="field" data-validate="pct">
+        <label for="pctFFS">3. Percent of Medicare that is traditional fee-for-service
+          <span class="hint">Of your Medicare patients, the share in traditional FFS Medicare (not Medicare Advantage). Best estimate is fine.</span></label>
+        <div class="suffix"><input type="number" id="pctFFS" name="pctFFS" min="0" max="100" step="0.1" required><span class="u">%</span></div>
+        <div class="err">Enter a percentage between 0 and 100.</div>
+      </div>
+
+      <div class="field" data-validate="int" data-min="0" data-max="200000">
+        <label for="currentCM">4. Patients currently billed monthly for care management
+          <span class="hint">CCM / PCM / APCM enrollees today. Enter 0 if none.</span></label>
+        <input type="number" id="currentCM" name="currentCM" min="0" max="200000" required>
+        <div class="err">Enter a whole number (0 or more).</div>
+      </div>
+
+      <div class="field" data-validate="int" data-min="0" data-max="100000">
+        <label for="discharges">5. Medicare hospital discharges per month
+          <span class="hint">Roughly how many of your Medicare patients leave the hospital each month. Best estimate is fine.</span></label>
+        <input type="number" id="discharges" name="discharges" min="0" max="100000" required>
+        <div class="err">Enter a whole number (0 or more).</div>
+      </div>
+
+      <button type="submit">Submit intake</button>
+
+      <div class="ok" id="okMsg"></div>
+    </form>
+
+    <div class="note">
+      <strong>What happens next:</strong> these five numbers feed the Blueprint pipeline. You receive a
+      10–12 page report with your uncaptured Medicare care-management revenue, which models fit your
+      staffing, three implementation paths with net revenue, a 90-day roadmap, and staff scripts.
+      <br><br>
+      <strong>The guarantee:</strong> if the conservative scenario doesn't identify at least $50,000 in
+      new annual revenue, you don't pay.
+    </div>
+    <p class="privacy">No protected health information is collected on this form. Practice-level numbers only.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('intakeForm');
+  var okMsg = document.getElementById('okMsg');
+
+  function fieldError(field) {
+    var type = field.getAttribute('data-validate');
+    var input = field.querySelector('input');
+    var v = input.value.trim();
+    if (v === '') return true; // required-empty
+    if (type === 'email') return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    if (type === 'text') return v.length < 1;
+    var num = Number(v);
+    if (isNaN(num)) return true;
+    if (type === 'pct') return num < 0 || num > 100;
+    if (type === 'int') {
+      var min = Number(field.getAttribute('data-min'));
+      var max = Number(field.getAttribute('data-max'));
+      if (!Number.isInteger(num)) return true;
+      if (num < min || num > max) return true;
+    }
+    return false;
+  }
+
+  // live-clear errors as the user fixes them
+  form.querySelectorAll('.field').forEach(function (field) {
+    var input = field.querySelector('input');
+    input.addEventListener('input', function () {
+      if (!fieldError(field)) field.classList.remove('invalid');
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var firstBad = null;
+    form.querySelectorAll('.field').forEach(function (field) {
+      if (fieldError(field)) {
+        field.classList.add('invalid');
+        if (!firstBad) firstBad = field;
+      } else {
+        field.classList.remove('invalid');
+      }
+    });
+    if (firstBad) { firstBad.querySelector('input').focus(); okMsg.style.display = 'none'; return; }
+
+    // Build the payload that the reporting pipeline consumes (matches generate.py schema).
+    var payload = {
+      practice_name: document.getElementById('practice').value.trim(),
+      prepared_for: document.getElementById('contact').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      physicians: parseInt(document.getElementById('physicians').value, 10),
+      panel_size: parseInt(document.getElementById('panel').value, 10),
+      pct_medicare: parseFloat(document.getElementById('pctMedicare').value),
+      pct_ffs_of_medicare: parseFloat(document.getElementById('pctFFS').value),
+      current_cm_patients: parseInt(document.getElementById('currentCM').value, 10),
+      medicare_discharges_month: parseInt(document.getElementById('discharges').value, 10),
+      prepared_by: "[Your Firm Name]"
+    };
+
+    // No backend is wired in this single-operator build. We surface the JSON so the founder
+    // can paste it straight into the pipeline (save as inputs.json, run generate.py), or wire
+    // this to email / a form service later. Offer a download for convenience.
+    var json = JSON.stringify(payload, null, 2);
+    okMsg.innerHTML = "<strong>Intake captured.</strong> Your five numbers are ready for the Blueprint pipeline."
+      + " A copy has been prepared for download as <code>inputs.json</code>."
+      + "<pre style='white-space:pre-wrap;font-size:12px;background:#fff;border:1px solid #cbd8df;border-radius:5px;padding:10px;margin-top:10px;'>"
+      + json.replace(/</g,'&lt;') + "</pre>";
+    okMsg.style.display = 'block';
+
+    try {
+      var blob = new Blob([json], { type: 'application/json' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'inputs.json';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    } catch (err) { /* download is a convenience; JSON is shown above regardless */ }
+
+    okMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+})();
+</script>
+</body>
+</html>

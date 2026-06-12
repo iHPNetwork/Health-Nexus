@@ -1,0 +1,12 @@
+{
+  "practice_name": "Westbrook Family Medicine",
+  "prepared_for": "Dr. [Practice Lead]",
+  "prepared_by": "[Your Firm Name]",
+  "state": "[State]",
+  "physicians": 4,
+  "panel_size": 7500,
+  "pct_medicare": 28,
+  "pct_ffs_of_medicare": 65,
+  "current_cm_patients": 60,
+  "medicare_discharges_month": 40
+}
