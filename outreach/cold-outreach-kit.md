@@ -101,10 +101,42 @@ minutes to gather your five numbers. Would this week work?
 
 — Denise Campbell, Ph.D., MSPH
 Campbell3, LLC · [phone] · denise4183@gmail.com
+[Your business mailing address — required by law on commercial email]
+*Not interested? Reply "remove" and you won't hear from me again.*
 
 > **Attach:** `samples/westbrook-family-medicine.pdf` (the free sample). For the first few practices,
 > mention the trial: *"For the first five practices I'm doing this for $750 instead of $1,500, in
 > exchange for a short testimonial."*
+> **CAN-SPAM (required on commercial email):** keep the honest subject, include your real mailing
+> address, and honor "remove"/"unsubscribe" requests promptly. The two lines above cover both.
+
+---
+
+## Email-first approach (if you'd rather email before you call)
+
+A clean way to warm up the call: email the sample first, then phone a few days later — "I sent you a
+note with a sample analysis." It makes the call friendlier and you've already shown the work.
+
+**Sourcing the emails (your NPI list has phones, not emails):**
+- **Fastest free way:** open each practice's website → "Contact" page → grab the office email
+  (often `info@` or `office@…`). ~1 minute each. For 15–20 targets this is quicker than it sounds.
+- **At scale:** a data tool like Apollo can find emails in bulk, but coverage of small independent
+  doctor's offices is hit-or-miss and it costs credits. Worth a test batch before committing.
+- Add an **Email** column to your call list as you go.
+
+**Deliverability — protect your sender reputation (important):**
+- Send in **small daily batches (20–30 max)** from your Gmail, personalized, not one giant blast.
+  Gmail caps ~500/day, but cold volume from a personal address gets flagged fast.
+- For real volume later, use a **dedicated sending domain** + a cold-email tool (Apollo, Instantly).
+  Not needed to land your first client — small batches are plenty.
+
+**The 3-touch email sequence (per practice):**
+1. **Day 1 — Initial.** The cold email above, sample attached.
+2. **Day 4 — Short bump (reply to your own email):** *"Bumping this up — did the sample reach you? Happy
+   to run your practice's number whenever you have 15 minutes. — Denise"*
+3. **Day 8 — Breakup:** *"I'll stop here so I'm not cluttering your inbox. If capturing six figures of
+   Medicare revenue is worth 15 minutes down the road, my door's open. — Denise"*
+- No reply after touch 3 → move on. Pair any email thread with one phone call for the best hit rate.
 
 ---
 
