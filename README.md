@@ -48,7 +48,7 @@ Output lands in `samples/<practice-slug>.html` and `.pdf`. The console prints th
 {
   "practice_name": "Westbrook Family Medicine",
   "prepared_for": "Dr. [Practice Lead]",
-  "prepared_by": "[Your Firm Name]",
+  "prepared_by": "Campbell3, LLC",
   "state": "[State]",
   "physicians": 4,
   "panel_size": 7500,

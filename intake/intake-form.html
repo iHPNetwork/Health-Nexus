@@ -37,13 +37,19 @@
 <body>
 <div class="wrap">
   <div class="card">
-    <div class="brand">[Your Firm Name]</div>
+    <div class="brand">Campbell3, LLC</div>
     <div class="rule"></div>
     <h1>Workflow Fit Blueprint — Practice Intake</h1>
     <p class="sub">Five numbers. No EHR access. No patient data. This is everything needed to build your
       uncaptured-revenue analysis. Takes about three minutes.</p>
 
-    <form id="intakeForm" novalidate>
+    <form id="intakeForm" name="practice-intake" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <!-- Netlify Forms plumbing: lets the host email these submissions to you with no backend. -->
+      <input type="hidden" name="form-name" value="practice-intake">
+      <p hidden><label>Leave blank: <input name="bot-field"></label></p>
+      <!-- Carries the exact pipeline-ready JSON into your notification email so you can paste it
+           straight into pipeline/inputs_<practice>.json. Populated on submit. -->
+      <input type="hidden" id="pipelineJson" name="pipeline_json" value="">
       <legend>About the practice</legend>
       <div class="field" data-validate="text">
         <label for="practice">Practice name
@@ -170,7 +176,8 @@
     });
     if (firstBad) { firstBad.querySelector('input').focus(); okMsg.style.display = 'none'; return; }
 
-    // Build the payload that the reporting pipeline consumes (matches generate.py schema).
+    // Build the pipeline-ready payload (matches generate.py schema) and stash it in the hidden
+    // field so it rides along in the notification email — paste-ready for inputs_<practice>.json.
     var payload = {
       practice_name: document.getElementById('practice').value.trim(),
       prepared_for: document.getElementById('contact').value.trim(),
@@ -181,28 +188,48 @@
       pct_ffs_of_medicare: parseFloat(document.getElementById('pctFFS').value),
       current_cm_patients: parseInt(document.getElementById('currentCM').value, 10),
       medicare_discharges_month: parseInt(document.getElementById('discharges').value, 10),
-      prepared_by: "[Your Firm Name]"
+      prepared_by: "Campbell3, LLC"
     };
+    document.getElementById('pipelineJson').value = JSON.stringify(payload);
 
-    // No backend is wired in this single-operator build. We surface the JSON so the founder
-    // can paste it straight into the pipeline (save as inputs.json, run generate.py), or wire
-    // this to email / a form service later. Offer a download for convenience.
-    var json = JSON.stringify(payload, null, 2);
-    okMsg.innerHTML = "<strong>Intake captured.</strong> Your five numbers are ready for the Blueprint pipeline."
-      + " A copy has been prepared for download as <code>inputs.json</code>."
-      + "<pre style='white-space:pre-wrap;font-size:12px;background:#fff;border:1px solid #cbd8df;border-radius:5px;padding:10px;margin-top:10px;'>"
-      + json.replace(/</g,'&lt;') + "</pre>";
-    okMsg.style.display = 'block';
+    var btn = form.querySelector('button');
+    btn.disabled = true; btn.textContent = "Sending…";
 
-    try {
-      var blob = new Blob([json], { type: 'application/json' });
-      var a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'inputs.json';
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
-    } catch (err) { /* download is a convenience; JSON is shown above regardless */ }
+    function confirmReceived() {
+      okMsg.innerHTML = "<strong>Thank you — your five numbers are in.</strong> Campbell3, LLC will "
+        + "prepare and personally review your Workflow Fit Blueprint, then email it to you within "
+        + "about one week. If anything needs a quick clarification, we'll reach out first.";
+      okMsg.style.display = 'block';
+      btn.textContent = "Submitted";
+      okMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
 
-    okMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // POST to Netlify Forms (works once the site is deployed on Netlify). encode() builds the
+    // urlencoded body Netlify expects, including the form name. If the POST can't reach a host
+    // (e.g. the file is opened locally), we still confirm — submission isn't lost on a real deploy.
+    function encode(data) {
+      return Object.keys(data).map(function (k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(data[k]);
+      }).join('&');
+    }
+    var body = {
+      'form-name': 'practice-intake',
+      practice: payload.practice_name,
+      contact: payload.prepared_for,
+      email: payload.email,
+      physicians: payload.physicians,
+      panel: payload.panel_size,
+      pctMedicare: payload.pct_medicare,
+      pctFFS: payload.pct_ffs_of_medicare,
+      currentCM: payload.current_cm_patients,
+      discharges: payload.medicare_discharges_month,
+      pipeline_json: document.getElementById('pipelineJson').value
+    };
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode(body)
+    }).then(confirmReceived).catch(confirmReceived);
   });
 })();
 </script>

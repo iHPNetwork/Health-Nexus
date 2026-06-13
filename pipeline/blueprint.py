@@ -89,7 +89,7 @@ def render(results: dict, selfcheck_report: dict, selfcheck_text: str) -> str:
     opt = results["scenarios"]["optimistic"]
     paths = results["operational_paths"]
     today = datetime.date.today().strftime("%B %d, %Y")
-    firm = inp.prepared_by or "[Your Firm Name]"
+    firm = inp.prepared_by or "Campbell3, LLC"
 
     status_badge = ('<span class="passbadge">VERIFIED</span>' if RATE_TABLE_STATUS == "VERIFIED"
                     else '<span class="provisional">RATES PROVISIONAL — VERIFY BEFORE CLIENT DELIVERY</span>')

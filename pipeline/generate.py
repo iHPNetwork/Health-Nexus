@@ -14,7 +14,7 @@ Input JSON schema (the five numbers plus labeling):
 {
   "practice_name": "Westbrook Family Medicine",
   "prepared_for": "Dr. ____",
-  "prepared_by": "[Your Firm Name]",
+  "prepared_by": "Campbell3, LLC",
   "state": "Ohio",
   "physicians": 4,
   "panel_size": 7500,
@@ -38,7 +38,7 @@ from rates import RATE_TABLE_STATUS
 WESTBROOK = {
     "practice_name": "Westbrook Family Medicine",
     "prepared_for": "Dr. [Practice Lead]",
-    "prepared_by": "[Your Firm Name]",
+    "prepared_by": "Campbell3, LLC",
     "state": "[State]",
     "physicians": 4,
     "panel_size": 7500,

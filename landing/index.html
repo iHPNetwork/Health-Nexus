@@ -66,7 +66,7 @@
 <body>
 <header>
   <div class="container">
-    <div class="brand">[Your Firm Name]</div>
+    <div class="brand">Campbell3, LLC</div>
     <a href="#order">Order a Blueprint</a>
   </div>
 </header>
@@ -122,96 +122,39 @@
   <div class="container">
     <h2>How it works</h2>
     <ol class="how">
-      <li>One 15-minute call to gather five numbers — panel size, % Medicare, % traditional fee-for-service Medicare, current care-management volume, and monthly Medicare discharges. No EHR access, no patient data.</li>
-      <li>We build your Blueprint and run a structured self-check on every figure before it goes out.</li>
-      <li>You receive a 10–12 page report, then a short working session to decide which path fits.</li>
+      <li>You enter five numbers — panel size, % Medicare, % traditional fee-for-service Medicare, current care-management volume, and monthly Medicare discharges. No EHR access, no patient data.</li>
+      <li>We build your Blueprint, run a structured self-check on every figure, and personally review it before it goes out.</li>
+      <li>You receive a 10–12 page report within about a week, then a short working session to decide which path fits.</li>
     </ol>
-    <p class="who">This is an independent revenue analysis. The firm preparing it does not resell
-      care-management software or take referral fees from any vendor — so the recommendation is yours,
-      not a sales pitch.</p>
+    <p class="who">This is an independent revenue analysis, personally reviewed before delivery. Campbell3,
+      LLC does not resell care-management software or take referral fees from any vendor — so the
+      recommendation is yours, not a sales pitch.</p>
   </div>
 </section>
 
 <section id="order">
   <div class="container">
-    <div class="formwrap">
+    <div class="formwrap" style="text-align:center;">
       <h2>Order a Blueprint</h2>
-      <p style="margin-top:0;color:#445;font-size:15px;">Four fields. We'll reach out to schedule the 15-minute intake call.</p>
-      <form id="orderForm" novalidate>
-        <div class="row">
-          <div class="field" data-type="text">
-            <label for="name">Name</label>
-            <input type="text" id="name" autocomplete="name" required>
-            <div class="err">Please enter your name.</div>
-          </div>
-          <div class="field" data-type="text">
-            <label for="practice">Practice</label>
-            <input type="text" id="practice" autocomplete="organization" required>
-            <div class="err">Please enter your practice name.</div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="field" data-type="email">
-            <label for="email">Email</label>
-            <input type="email" id="email" autocomplete="email" required>
-            <div class="err">Please enter a valid email address.</div>
-          </div>
-          <div class="field" data-type="phone">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" autocomplete="tel" required>
-            <div class="err">Please enter a valid phone number.</div>
-          </div>
-        </div>
-        <button type="submit">Order a Blueprint</button>
-        <div class="ok" id="ok"></div>
-      </form>
-      <p class="micro">No protected health information is collected here. This is a contact request only.</p>
+      <p style="margin-top:0;color:#445;font-size:15px;max-width:560px;margin-left:auto;margin-right:auto;">
+        Start with five numbers — panel size, % Medicare, % traditional fee-for-service Medicare, your
+        current care-management volume, and monthly Medicare discharges. No EHR access, no patient data,
+        about three minutes. We prepare and personally review your Blueprint and email it to you within
+        about a week.</p>
+      <a class="cta" href="../intake/intake-form.html" style="margin-top:6px;">Enter your five numbers</a>
+      <p class="micro">No protected health information is collected. Practice-level numbers only.<br>
+        Prefer to talk it through first? Email <a href="mailto:denise4183@gmail.com">denise4183@gmail.com</a>.</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    [Your Firm Name] — independent primary care revenue analysis. The Workflow Fit Blueprint estimates
+    Campbell3, LLC — independent primary care revenue analysis. The Workflow Fit Blueprint estimates
     revenue opportunity from practice-supplied operating numbers; it is not a guarantee of collection and
     is not legal or billing-compliance advice.
   </div>
 </footer>
 
-<script>
-(function () {
-  var form = document.getElementById('orderForm');
-  var ok = document.getElementById('ok');
-  function bad(field) {
-    var t = field.getAttribute('data-type');
-    var v = field.querySelector('input').value.trim();
-    if (v === '') return true;
-    if (t === 'email') return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-    if (t === 'phone') return v.replace(/[^\d]/g,'').length < 10;
-    return false;
-  }
-  form.querySelectorAll('.field').forEach(function (f) {
-    f.querySelector('input').addEventListener('input', function () {
-      if (!bad(f)) f.classList.remove('invalid');
-    });
-  });
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var first = null;
-    form.querySelectorAll('.field').forEach(function (f) {
-      if (bad(f)) { f.classList.add('invalid'); if (!first) first = f; }
-      else f.classList.remove('invalid');
-    });
-    if (first) { first.querySelector('input').focus(); ok.style.display='none'; return; }
-    // Single-operator build: no backend wired. Capture the lead for the founder to follow up.
-    // Wire this to email/a form service (Formspree, Google Form, etc.) when ready.
-    ok.innerHTML = "<strong>Thank you.</strong> Your request is in. We'll email you within one business "
-      + "day to schedule the 15-minute intake call. — [Your Firm Name]";
-    ok.style.display = 'block';
-    form.querySelector('button').disabled = true;
-    ok.scrollIntoView({ behavior:'smooth', block:'center' });
-  });
-})();
-</script>
 </body>
 </html>
