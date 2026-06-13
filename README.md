@@ -1,4 +1,4 @@
-# Workflow Fit Blueprint — Operating Kit
+# Practice Revenue Blueprint — Operating Kit
 
 A complete, self-contained operation for a single-operator healthcare revenue-consulting business. It
 turns five practice-level numbers into a professional 10–12 page PDF that shows a primary care practice

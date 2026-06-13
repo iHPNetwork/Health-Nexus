@@ -46,8 +46,8 @@ revenue for [Practice Name], you don't pay. Want me to run yours?
 Hi [First Name], [Your Name] here — you and I worked through enough billing workflows together that I knew
 you'd want this on your radar. Medicare's 2025 APCM codes removed the time-logging requirement that made
 care management more trouble than it was worth, and the revenue most practices are leaving on the table is
-real money — for a panel your size, usually well into six figures a year. I'm building fixed-fee Workflow Fit
-Blueprints for a first group of practices at $750 (half off, for a testimonial): you give me five numbers on
+real money — for a panel your size, usually well into six figures a year. I'm building fixed-fee Practice
+Revenue Blueprints for a first group of practices at $750 (half off, for a testimonial): you give me five numbers on
 one short call, I hand you a report showing the dollars, which models fit your staffing, and three ways to
 run it with net revenue after cost. If it doesn't identify $50k+, there's no charge — can I put [Practice
 Name] on the list?
@@ -82,7 +82,7 @@ guarantee or you don't pay; can I build one for [Practice Name]?
 Dr. [Last Name], [Your Name] here — given your role over [network / primary care group], I wanted to flag
 something your practices are likely missing. Medicare's 2025 APCM codes removed the documentation burden that
 historically killed care-management ROI, and across a multi-site primary care footprint the uncaptured annual
-revenue typically runs into seven figures. I'm doing independent, fixed-fee Workflow Fit Blueprints — built
+revenue typically runs into seven figures. I'm doing independent, fixed-fee Practice Revenue Blueprints — built
 from five practice-level numbers, no EHR access, no vendor agenda — and I'd like to prove it out on one of your
 sites at the trial rate of $750 (for a testimonial), with a $50k-or-you-don't-pay guarantee. Could I run one
 for whichever practice you'd point me to?

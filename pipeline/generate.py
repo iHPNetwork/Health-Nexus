@@ -110,7 +110,7 @@ def generate(data: dict, out_dir: str) -> dict:
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Generate a Workflow Fit Blueprint.")
+    ap = argparse.ArgumentParser(description="Generate a Practice Revenue Blueprint.")
     ap.add_argument("inputs", nargs="?", help="Path to intake JSON file")
     ap.add_argument("--demo", action="store_true", help="Build the Westbrook sample Blueprint")
     ap.add_argument("--out-dir", default=os.path.join(os.path.dirname(__file__), "..", "samples"))
