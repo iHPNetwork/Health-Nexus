@@ -1,0 +1,16 @@
+# Replit run config. The Run button starts a small static server that serves the
+# landing page (shareable URL) and the intake form. Generate Blueprints from the Shell:
+#   cd pipeline && python3 generate.py inputs_westbrook.json
+run = "python3 server.py"
+entrypoint = "server.py"
+
+[nix]
+channel = "stable-24_05"
+
+[env]
+# Help WeasyPrint's ctypes loader find the Nix-provided shared libraries.
+LD_LIBRARY_PATH = "/nix/store"
+
+[[ports]]
+localPort = 8000
+externalPort = 80

@@ -123,6 +123,23 @@ service (Formspree, Google Forms, a Zapier webhook) — a one-line change in the
 
 ---
 
+## Running on Replit
+
+1. **Create Repl → Import from GitHub** and paste this repo's URL.
+2. Replit reads `replit.nix` (system libraries for WeasyPrint) and `requirements.txt` (the
+   `weasyprint` package) automatically.
+3. Press **Run**. `server.py` starts and Replit gives you a live URL:
+   - `/` — the landing page (this is the shareable link for outreach)
+   - `/intake` — the intake form
+   - `/sample` — the sample Blueprint
+4. To **generate a Blueprint**, open the Replit **Shell** and run:
+   ```
+   cd pipeline && python3 generate.py inputs_westbrook.json
+   ```
+
+If PDF rendering ever fails on Replit (a missing system library), the pipeline still writes
+the HTML — open it and Print → Save as PDF. Everything else runs unchanged.
+
 ## Dependencies
 
 - **Python 3.9+** with **WeasyPrint** (`pip install weasyprint`) for PDF rendering. If WeasyPrint isn't
