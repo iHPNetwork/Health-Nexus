@@ -8,5 +8,6 @@
   "pct_medicare": 28,
   "pct_ffs_of_medicare": 65,
   "current_cm_patients": 60,
-  "medicare_discharges_month": 40
+  "medicare_discharges_month": 40,
+  "sample": true
 }

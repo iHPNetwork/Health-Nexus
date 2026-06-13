@@ -46,6 +46,14 @@ p { margin: 0 0 7px; }
 .cover .meta { margin-top: 45px; font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 10pt; color: #333; }
 .cover .meta div { margin-bottom: 4px; }
 .rule { height: 4px; background: #143d59; width: 90px; margin: 18px 0; }
+/* SAMPLE marking — only rendered when the report is flagged as a sample. */
+.watermark { position: fixed; top: 42%; left: 0; right: 0; text-align: center;
+  transform: rotate(-32deg); font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 120pt; font-weight: 800; letter-spacing: 14px;
+  color: rgba(184, 134, 11, 0.10); z-index: 0; }
+.samplebanner { background: #b8860b; color: #fff; font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 11pt;
+  padding: 8px 14px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
 .kpi { background: #f3f7fa; border: 1px solid #d5e3ec; border-left: 6px solid #143d59; padding: 12px 16px; margin: 10px 0; }
 .kpi .label { font-size: 9pt; letter-spacing: 1px; text-transform: uppercase; color: #1d5b7a; }
 .kpi .kpi-big { font-size: 28pt; color: #143d59; font-weight: 700; line-height: 1.1; }
@@ -94,10 +102,22 @@ def render(results: dict, selfcheck_report: dict, selfcheck_text: str) -> str:
     status_badge = ('<span class="passbadge">VERIFIED</span>' if RATE_TABLE_STATUS == "VERIFIED"
                     else '<span class="provisional">RATES PROVISIONAL — VERIFY BEFORE CLIENT DELIVERY</span>')
 
+    # Sample marking — only when the report is flagged as an illustrative sample.
+    is_sample = getattr(inp, "sample", False)
+    watermark = '<div class="watermark">SAMPLE</div>' if is_sample else ''
+    cover_banner = ('<div class="samplebanner">Sample — Illustrative Example (not a real practice)</div>'
+                    if is_sample else '')
+    sample_note = ('<br><strong>This is an illustrative sample</strong> using fictional inputs for '
+                   '"Westbrook Family Medicine." It demonstrates the format and method; it is not a '
+                   'real practice or a real client\'s data. Your Blueprint will use your own numbers.'
+                   if is_sample else '')
+
     h = []
     # ---------------- PAGE 1: COVER ----------------
     h.append(f"""
+    {watermark}
     <div class="cover">
+      {cover_banner}
       <div class="brand">{firm}</div>
       <div class="rule"></div>
       <h1>Practice Revenue Blueprint</h1>
@@ -112,7 +132,7 @@ def render(results: dict, selfcheck_report: dict, selfcheck_text: str) -> str:
       </div>
       <p class="small" style="margin-top:55px;">This report contains no protected health information. All figures are derived from five
       practice-level operating numbers supplied by {inp.practice_name}. Estimates are revenue
-      <em>opportunity</em> projections, not guarantees of collection. See methodology and assumptions.</p>
+      <em>opportunity</em> projections, not guarantees of collection. See methodology and assumptions.{sample_note}</p>
     </div>
     """)
 
