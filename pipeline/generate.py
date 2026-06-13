@@ -47,6 +47,7 @@ WESTBROOK = {
     "current_cm_patients": 60,
     "medicare_discharges_month": 40,
     "sample": True,
+    "analyst": "Denise Campbell, Ph.D., MSPH",
 }
 
 
@@ -67,6 +68,7 @@ def load_inputs(data: dict) -> Inputs:
         prepared_by=data.get("prepared_by", ""),
         state=data.get("state", ""),
         sample=bool(data.get("sample", False)),
+        analyst=data.get("analyst", ""),
     )
 
 

@@ -127,7 +127,7 @@ def render(results: dict, selfcheck_report: dict, selfcheck_text: str) -> str:
         <div><strong>Attention:</strong> {inp.prepared_for or '[Practice contact]'}</div>
         <div><strong>Practice profile:</strong> {inp.physicians} physicians · {inp.panel_size:,}-patient panel · {inp.pct_medicare:.0f}% Medicare{(' · ' + inp.state) if inp.state else ''}</div>
         <div><strong>Date:</strong> {today}</div>
-        <div><strong>Prepared by:</strong> {firm}</div>
+        <div><strong>Prepared by:</strong> {(inp.analyst + ' · ') if getattr(inp, 'analyst', '') else ''}{firm}</div>
         <div style="margin-top:14px;">{status_badge}</div>
       </div>
       <p class="small" style="margin-top:55px;">This report contains no protected health information. All figures are derived from five
