@@ -32,7 +32,8 @@ The care-management software market is **crowded but resented**:
 
 That is precisely the founder's edge — she's the independent expert who profits from *advice, not rev-share*. The product productizes that.
 
-## 3. The product: "Campbell3 — Medicare Revenue Capture for Independent Primary Care"
+## 3. The product: "Practice Lens — See the Medicare revenue your practice is missing"
+*(Product brand: **Practice Lens**. Company: Campbell3, LLC. Tagline: "See the Medicare revenue your practice is missing.")*
 A **flat-fee SaaS** that turns the founder's expertise into a tool a small practice runs itself. Three layers:
 
 **A. Revenue Finder (free — the hook).** The existing engine: five numbers → headline uncaptured revenue +
@@ -98,6 +99,6 @@ web/app layer plus subscription plumbing.
 
 ## 8. Open decisions for the founder
 1. **PHI fork:** confirm Option A (no PHI) for MVP. *(Recommended.)*
-2. **Brand:** keep "Campbell3," or a product name (e.g., "Capture," "PrimaryRev")? Product name may sell better than an LLC name.
+2. **Brand:** DECIDED — product name **Practice Lens** (company: Campbell3, LLC), tagline "See the Medicare revenue your practice is missing." Pending domain (practicelens.com) + USPTO trademark check.
 3. **Scope of v1:** Finder + Playbook first (content-only, fastest to revenue), then add the Dashboard? Or all three at once?
 4. **Build path:** this is a real software build (weeks, not the afternoon the Blueprint took). Decide build appetite/budget before starting.

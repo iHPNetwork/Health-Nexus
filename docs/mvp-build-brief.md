@@ -1,8 +1,10 @@
 # MVP Build Brief — for building on Replit
 
+**Product name:** Practice Lens  ·  **Tagline:** *See the Medicare revenue your practice is missing.*  ·  Company: Campbell3, LLC
+
 Refined, build-ready plan for the app. Written so you (or Replit's AI agent) can build it in phases on
 Replit. Assumes the **no-PHI MVP** (counts only, no patient names) — the fastest, lowest-liability path,
-and the right call for a Replit build. Product name shown as `[PRODUCT]` until you pick one.
+and the right call for a Replit build.
 
 ## Why this is a good fit for Replit
 - The analytical core (`pipeline/engine.py`, `rates.py`, `selfcheck.py`) is **already written in Python**.
@@ -38,7 +40,7 @@ No patient data, ever. Five practice-level numbers only.
 three scenario totals. Hold back everything else (that's the paid tier).
 
 ### Paste-into-Replit-AI-agent prompt (Phase 1)
-> Build a Python Flask web app called [PRODUCT]. It has a landing page, a form collecting five numbers
+> Build a Python Flask web app called Practice Lens. It has a landing page, a form collecting five numbers
 > (active patient panel size, % Medicare, % traditional fee-for-service Medicare, patients currently
 > billed monthly for care management, Medicare hospital discharges per month), then a contact gate
 > (name, practice, email, phone), then a results page showing a single headline dollar figure and three
@@ -88,6 +90,6 @@ Wire Stripe products to these tiers in Phase 2.
   reviewed Blueprint always agree.
 
 ## Still to decide
-- **Product name** (see options provided separately) → replace `[PRODUCT]` everywhere + buy the domain.
+- **Domain + trademark:** secure practicelens.com (or .io/.health) and run a USPTO trademark check.
 - Confirm **no-PHI MVP** (assumed here).
 - Whether to build Phase 1 yourself on Replit with its AI agent (using the prompt above) or have it built for you.
