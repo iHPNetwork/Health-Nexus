@@ -99,6 +99,15 @@ web/app layer plus subscription plumbing.
 
 ## 8. Open decisions for the founder
 1. **PHI fork:** confirm Option A (no PHI) for MVP. *(Recommended.)*
-2. **Brand:** DECIDED — product name **Practice Lens** (company: Campbell3, LLC), tagline "See the Medicare revenue your practice is missing." Pending domain (practicelens.com) + USPTO trademark check.
+2. **Brand:** DECIDED — single brand **Practice Lens** (company: Campbell3, LLC), tagline "See the Medicare
+   revenue your practice is missing." Modules use **descriptive names** (no separate trademark needed):
+   **Revenue Finder** (free), **Capture Playbook**, **Capture Dashboard**.
+   - *Trademark check (informal, 2026-06):* "Practice Lens" — no federal registration found; the only
+     "Practice Lens" in use is an **allied-education platform** (different field → low conflict risk for
+     healthcare-revenue SaaS), but `practicelens.com` is taken → use an alternate domain
+     (`.io`/`.health`/`.app` or `get`/`try` prefix). **"CareCapture" was rejected** — already used by
+     multiple healthcare-tech companies (Tulio Health's CareCapture app, Care Capture Inc., CareCapture AI)
+     and domains taken; too much likelihood of confusion in-category. Do a formal USPTO/attorney clearance
+     on "Practice Lens" before filing.
 3. **Scope of v1:** Finder + Playbook first (content-only, fastest to revenue), then add the Dashboard? Or all three at once?
 4. **Build path:** this is a real software build (weeks, not the afternoon the Blueprint took). Decide build appetite/budget before starting.
