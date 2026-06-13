@@ -45,7 +45,7 @@ Target: ~15–20 dials/hour. Expect most to not pick up — that's normal. A han
 ## COLD CALL SCRIPT
 
 ### Getting past the front desk (gatekeeper)
-> "Hi, this is **[Your Name]** with **Campbell3**. I help primary care practices with the **Medicare
+> "Hi, this is **Denise Campbell** with **Campbell3**. I help primary care practices with the **Medicare
 > care-management billing changes** that took effect in 2025. Who's the best person there to talk to
 > about the practice's Medicare revenue — **Dr. [Last Name]** or your **practice manager**?"
 
@@ -73,7 +73,7 @@ Keep it conversational, not a pitch. You're a credentialed care-management exper
 ---
 
 ## VOICEMAIL (15 seconds — leave it, then email)
-> "Hi Dr. [Last Name], this is **[Your Name]** with **Campbell3** — **[phone number]**. Medicare changed
+> "Hi Dr. [Last Name], this is **Denise Campbell** with **Campbell3** — **[phone number]**. Medicare changed
 > how it pays primary care for care management in 2025, and most practices are leaving six figures
 > uncaptured. I've got a **free sample analysis** I'd like to send over. I'll email it now too — or reach
 > me at **[phone number]**. Thanks."
@@ -99,7 +99,7 @@ it doesn't identify at least $50,000 in new annual revenue, you don't pay.**
 I've attached a **free sample** so you can see exactly what it looks like. If it's useful, I just need 15
 minutes to gather your five numbers. Would this week work?
 
-— [Your Name]
+— Denise Campbell, Ph.D., MSPH
 Campbell3, LLC · [phone] · denise4183@gmail.com
 
 > **Attach:** `samples/westbrook-family-medicine.pdf` (the free sample). For the first few practices,

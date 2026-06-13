@@ -9,5 +9,6 @@
   "pct_ffs_of_medicare": 65,
   "current_cm_patients": 60,
   "medicare_discharges_month": 40,
-  "sample": true
+  "sample": true,
+  "analyst": "Denise Campbell, Ph.D., MSPH"
 }
