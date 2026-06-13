@@ -46,6 +46,7 @@ WESTBROOK = {
     "pct_ffs_of_medicare": 65,
     "current_cm_patients": 60,
     "medicare_discharges_month": 40,
+    "sample": True,
 }
 
 
@@ -65,6 +66,7 @@ def load_inputs(data: dict) -> Inputs:
         prepared_for=data.get("prepared_for", ""),
         prepared_by=data.get("prepared_by", ""),
         state=data.get("state", ""),
+        sample=bool(data.get("sample", False)),
     )
 
 

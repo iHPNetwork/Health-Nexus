@@ -40,6 +40,7 @@ class Inputs:
     prepared_for: str = ""          # contact name on the cover
     prepared_by: str = ""           # firm name
     state: str = ""
+    sample: bool = False            # True => render SAMPLE banner + watermark
 
     def validate(self):
         errs = []
