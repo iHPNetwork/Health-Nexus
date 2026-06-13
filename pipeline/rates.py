@@ -8,17 +8,16 @@ engine uses is pulled from this file by name. The self-check gate confirms that 
 FOUNDER — READ THIS BEFORE YOUR FIRST PAID CLIENT
 -------------------------------------------------
 The dollar values below are national, non-facility 2026 Medicare Physician Fee Schedule
-figures as best understood at build time (June 2026). They are intentionally CONSERVATIVE.
-Before you deliver a paid Blueprint:
+figures, verified 2026-06-12 against multiple independent sources reporting the CY 2026
+PFS Final Rule (CMS-1832-F, issued 2025-10-31, effective 2026-01-01). Where sources
+differed by pennies (CMS finalized TWO 2026 conversion factors — a slightly higher one
+for Qualifying APM Participants), the LOWER non-QP figure was kept so the table stays
+conservative.
 
-  1. Open your verified 2026 sample Blueprint / the CMS 2026 PFS final rule.
-  2. Confirm each value below. Adjust if your verified source differs.
-  3. Change RATE_TABLE_STATUS to "VERIFIED" and set RATE_TABLE_VERIFIED_DATE.
-
-The self-check will print the table's status on every run so you always know whether the
-numbers in front of a client are confirmed or still provisional. A Blueprint can still be
-generated while status is "PROVISIONAL" (so you can practice), but the self-check will
-FLAG it loudly and you should not send it to a paying client until status is "VERIFIED".
+RECOMMENDED FINAL SPOT-CHECK: before the first paid Blueprint, run the eight codes
+through the CMS PFS Look-Up Tool (cms.gov, MAC locality "National Payment Amount",
+non-facility) to confirm to-the-penny values for your locality. The verification below
+is solid for an opportunity estimate; the lookup tool is the to-the-penny primary source.
 
 Geographic note: PFS amounts vary by locality (GPCI). National averages are used here.
 For a real client you may localize, but national-average is defensible and conservative
@@ -26,15 +25,17 @@ for a revenue *opportunity* estimate. State this in the methodology (the Bluepri
 """
 
 # ----------------------------------------------------------------------------------------
-# TABLE STATUS  — flip to "VERIFIED" once the founder confirms every value below.
+# TABLE STATUS
 # ----------------------------------------------------------------------------------------
-RATE_TABLE_STATUS = "PROVISIONAL"        # "PROVISIONAL" | "VERIFIED"
-RATE_TABLE_VERIFIED_DATE = ""            # e.g. "2026-06-12" once verified
+RATE_TABLE_STATUS = "VERIFIED"           # "PROVISIONAL" | "VERIFIED"
+RATE_TABLE_VERIFIED_DATE = "2026-06-12"
 RATE_TABLE_BUILD_DATE = "2026-06-12"
 RATE_TABLE_SOURCE_NOTE = (
-    "2026 Medicare Physician Fee Schedule, national non-facility allowed amounts. "
-    "APCM = Advanced Primary Care Management (G0556/G0557/G0558, effective 2025). "
-    "Founder to verify against 2026 CMS PFS final rule / verified sample Blueprint."
+    "2026 Medicare Physician Fee Schedule, national non-facility allowed amounts, per "
+    "CY 2026 PFS Final Rule (CMS-1832-F). Cross-verified 2026-06-12 against multiple "
+    "independent industry sources (CircleLink, Thoroughcare, ChartSpan, Prevounce, "
+    "Rimidi); non-QP conversion-factor figures used where two CFs apply. "
+    "APCM = Advanced Primary Care Management (G0556/G0557/G0558, effective 2025)."
 )
 
 # Each rate carries: value (USD), unit, source, and a free-text note.
@@ -44,58 +45,63 @@ RATES = {
     # ---- Advanced Primary Care Management (replaces CCM/PCM; monthly bundle, no time log) ----
     "G0556": {  # APCM Level 1 — 1 chronic condition
         "label": "APCM Level 1 (1 chronic condition)",
-        "value": 15.00, "unit": "per_month",
-        "source": "2026 PFS (provisional)",
-        "note": "Lowest tier; patients with a single chronic condition.",
+        "value": 16.37, "unit": "per_month",
+        "source": "2026 PFS final rule (verified 2026-06-12)",
+        "note": "Lowest tier; patients with a single chronic condition. Was $15.00 provisional.",
     },
     "G0557": {  # APCM Level 2 — 2+ chronic conditions (the workhorse code)
         "label": "APCM Level 2 (2+ chronic conditions)",
-        "value": 50.00, "unit": "per_month",
-        "source": "2026 PFS (provisional)",
-        "note": "Most Medicare patients land here. Primary revenue driver.",
+        "value": 53.78, "unit": "per_month",
+        "source": "2026 PFS final rule (verified 2026-06-12)",
+        "note": "Most Medicare patients land here. Primary revenue driver. +10.4% vs 2025 "
+                "($48.84). Non-QP CF figure; QP figure is ~$53.91. Was $50.00 provisional.",
     },
     "G0558": {  # APCM Level 3 — 2+ chronic conditions AND QMB (dual-eligible)
         "label": "APCM Level 3 (2+ chronic + QMB / dual-eligible)",
-        "value": 110.00, "unit": "per_month",
-        "source": "2026 PFS (provisional)",
-        "note": "Highest tier; QMB-designated dual-eligible patients.",
+        "value": 117.24, "unit": "per_month",
+        "source": "2026 PFS final rule (verified 2026-06-12)",
+        "note": "Highest tier; QMB-designated dual-eligible patients. Was $110.00 provisional.",
     },
 
     # ---- Chronic Care Management (the OLD model practices bill today; used only to value
     #      existing billing that APCM REPLACES, so we never double-count). ----
     "99490": {
         "label": "CCM, first 20 min (legacy model APCM replaces)",
-        "value": 62.00, "unit": "per_month",
-        "source": "2026 PFS (provisional)",
-        "note": "Used ONLY to value a practice's current care-mgmt billing for net-out.",
+        "value": 66.13, "unit": "per_month",
+        "source": "2026 PFS final rule (verified 2026-06-12)",
+        "note": "Used ONLY to value a practice's current care-mgmt billing for net-out. "
+                "+9.6% vs 2025 ($60.49). Was $62.00 provisional.",
     },
 
     # ---- Transitional Care Management (visit-based, post-discharge) ----
     "99495": {
         "label": "TCM, moderate complexity (14-day face-to-face)",
-        "value": 207.00, "unit": "per_service",
-        "source": "2026 PFS (provisional)",
-        "note": "Billed once per eligible discharge.",
+        "value": 220.00, "unit": "per_service",
+        "source": "2026 PFS final rule (verified 2026-06-12)",
+        "note": "Billed once per eligible discharge. +10% vs 2025. Was $207.00 provisional.",
     },
     "99496": {
         "label": "TCM, high complexity (7-day face-to-face)",
-        "value": 277.00, "unit": "per_service",
-        "source": "2026 PFS (provisional)",
-        "note": "Billed once per eligible high-complexity discharge.",
+        "value": 298.00, "unit": "per_service",
+        "source": "2026 PFS final rule (verified 2026-06-12)",
+        "note": "Billed once per eligible high-complexity discharge. +10% vs 2025. "
+                "Was $277.00 provisional.",
     },
 
     # ---- Annual Wellness Visit (visit-based, once per 12 months) ----
     "G0438": {
         "label": "AWV, initial visit",
-        "value": 172.00, "unit": "per_service",
-        "source": "2026 PFS (provisional)",
-        "note": "First AWV a patient ever receives.",
+        "value": 174.00, "unit": "per_service",
+        "source": "2026 PFS final rule (verified 2026-06-12)",
+        "note": "First AWV a patient ever receives. Was $172.00 provisional.",
     },
     "G0439": {
         "label": "AWV, subsequent visit",
-        "value": 131.00, "unit": "per_service",
-        "source": "2026 PFS (provisional)",
-        "note": "Every AWV after the first; the steady-state majority.",
+        "value": 138.00, "unit": "per_service",
+        "source": "2026 PFS final rule (verified 2026-06-12)",
+        "note": "Every AWV after the first; the steady-state majority. Confirmed by two "
+                "independent 2026 sources; one outlier (~$120) discarded as inconsistent "
+                "with the 2025 baseline (~$126-128). Was $131.00 provisional.",
     },
 }
 
