@@ -1,4 +1,4 @@
-# Workflow Fit Blueprint — Operating Kit
+# Practice Revenue Blueprint — Operating Kit
 
 A complete, self-contained operation for a single-operator healthcare revenue-consulting business. It
 turns five practice-level numbers into a professional 10–12 page PDF that shows a primary care practice
@@ -48,7 +48,7 @@ Output lands in `samples/<practice-slug>.html` and `.pdf`. The console prints th
 {
   "practice_name": "Westbrook Family Medicine",
   "prepared_for": "Dr. [Practice Lead]",
-  "prepared_by": "[Your Firm Name]",
+  "prepared_by": "Campbell3, LLC",
   "state": "[State]",
   "physicians": 4,
   "panel_size": 7500,
@@ -122,6 +122,23 @@ When you want submissions delivered automatically, point either form's submit ha
 service (Formspree, Google Forms, a Zapier webhook) — a one-line change in the inline `<script>`.
 
 ---
+
+## Running on Replit
+
+1. **Create Repl → Import from GitHub** and paste this repo's URL.
+2. Replit reads `replit.nix` (system libraries for WeasyPrint) and `requirements.txt` (the
+   `weasyprint` package) automatically.
+3. Press **Run**. `server.py` starts and Replit gives you a live URL:
+   - `/` — the landing page (this is the shareable link for outreach)
+   - `/intake` — the intake form
+   - `/sample` — the sample Blueprint
+4. To **generate a Blueprint**, open the Replit **Shell** and run:
+   ```
+   cd pipeline && python3 generate.py inputs_westbrook.json
+   ```
+
+If PDF rendering ever fails on Replit (a missing system library), the pipeline still writes
+the HTML — open it and Print → Save as PDF. Everything else runs unchanged.
 
 ## Dependencies
 

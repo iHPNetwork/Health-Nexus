@@ -52,7 +52,7 @@ session held. That's the whole funnel.
 
 ## Day 6 — Deliver with a cover email (≤ 45 min)
 - Send the final Blueprint. Keep the cover email short:
-  > Dr. [Name] — your Workflow Fit Blueprint is attached. The headline: about **$[conservative number]** in
+  > Dr. [Name] — your Practice Revenue Blueprint is attached. The headline: about **$[conservative number]** in
   > new annual Medicare revenue you're not capturing today, conservatively. Pages 8–9 lay out three ways to
   > run it (in-house, turnkey, hybrid) with net revenue after cost, and a 90-day roadmap. Let's take 30
   > minutes this week to walk it and decide which path fits — does [day/time] work?

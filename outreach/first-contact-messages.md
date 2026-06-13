@@ -8,7 +8,7 @@ five clients, in exchange for a testimonial).
 
 **Discount framing:** "first five practices / for a testimonial / $750 instead of $1,500." Use it plainly.
 
-**A note on the signature:** swap `[Your Firm Name]` and `[Your Name]` throughout. Keep your real
+**A note on the signature:** swap `Campbell3, LLC` and `[Your Name]` throughout. Keep your real
 credentials in the sign-off — they are the reason these land.
 
 > **Moonlighting guardrail (read once):** none of these touch DPP coverage, health-plan negotiation, or
@@ -33,7 +33,7 @@ of fixed-fee revenue Blueprints for practices I know first, at $750 (half price)
 testimonial; it's five numbers and a 15-minute call, and if it doesn't find at least $50k in new annual
 revenue for [Practice Name], you don't pay. Want me to run yours?
 
-— [Your Name], [Your Firm Name]
+— [Your Name], Campbell3, LLC
 
 ---
 
@@ -46,13 +46,13 @@ revenue for [Practice Name], you don't pay. Want me to run yours?
 Hi [First Name], [Your Name] here — you and I worked through enough billing workflows together that I knew
 you'd want this on your radar. Medicare's 2025 APCM codes removed the time-logging requirement that made
 care management more trouble than it was worth, and the revenue most practices are leaving on the table is
-real money — for a panel your size, usually well into six figures a year. I'm building fixed-fee Workflow Fit
-Blueprints for a first group of practices at $750 (half off, for a testimonial): you give me five numbers on
+real money — for a panel your size, usually well into six figures a year. I'm building fixed-fee Practice
+Revenue Blueprints for a first group of practices at $750 (half off, for a testimonial): you give me five numbers on
 one short call, I hand you a report showing the dollars, which models fit your staffing, and three ways to
 run it with net revenue after cost. If it doesn't identify $50k+, there's no charge — can I put [Practice
 Name] on the list?
 
-— [Your Name], [Your Firm Name]
+— [Your Name], Campbell3, LLC
 
 ---
 
@@ -69,7 +69,7 @@ entirely. I'm now independent and doing fixed-fee revenue Blueprints — no soft
 $750 for the first few practices in exchange for a testimonial. Five numbers, a 15-minute call, and a $50k
 guarantee or you don't pay; can I build one for [Practice Name]?
 
-— [Your Name], [Your Firm Name]
+— [Your Name], Campbell3, LLC
 
 ---
 
@@ -82,12 +82,12 @@ guarantee or you don't pay; can I build one for [Practice Name]?
 Dr. [Last Name], [Your Name] here — given your role over [network / primary care group], I wanted to flag
 something your practices are likely missing. Medicare's 2025 APCM codes removed the documentation burden that
 historically killed care-management ROI, and across a multi-site primary care footprint the uncaptured annual
-revenue typically runs into seven figures. I'm doing independent, fixed-fee Workflow Fit Blueprints — built
+revenue typically runs into seven figures. I'm doing independent, fixed-fee Practice Revenue Blueprints — built
 from five practice-level numbers, no EHR access, no vendor agenda — and I'd like to prove it out on one of your
 sites at the trial rate of $750 (for a testimonial), with a $50k-or-you-don't-pay guarantee. Could I run one
 for whichever practice you'd point me to?
 
-— [Your Name], [Your Firm Name]
+— [Your Name], Campbell3, LLC
 
 ---
 
@@ -105,7 +105,7 @@ most primary care practices haven't recalculated what they're now leaving uncapt
 fixed-fee revenue Blueprints (five numbers, one 15-minute call, $50k guarantee or no charge), and I'm offering
 the first few at $750 for a testimonial. Would you like me to build one for [Practice Name] in [State]?
 
-— [Your Name], [Your Firm Name]
+— [Your Name], Campbell3, LLC
 
 ---
 

@@ -1,0 +1,23 @@
+# Netlify deploy config — free static hosting + built-in form handling (no backend).
+# Deploy: drag this folder onto https://app.netlify.com/drop, OR connect the GitHub repo.
+# Form submissions (the five numbers) arrive in your Netlify dashboard AND by email
+# (Site settings -> Forms -> Form notifications -> add denise4183@gmail.com).
+
+[build]
+  publish = "."
+
+# Pretty URLs so you can hand out clean links.
+[[redirects]]
+  from = "/"
+  to = "/landing/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/intake"
+  to = "/intake/intake-form.html"
+  status = 200
+
+[[redirects]]
+  from = "/sample"
+  to = "/samples/westbrook-family-medicine.html"
+  status = 200

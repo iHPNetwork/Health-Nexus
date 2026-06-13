@@ -29,7 +29,7 @@ CSS = """
 @page {
   size: letter;
   margin: 0.7in 0.75in 0.8in 0.75in;
-  @bottom-center { content: "Workflow Fit Blueprint — Confidential — Page " counter(page) " of " counter(pages); font-size: 8pt; color: #8a8a8a; }
+  @bottom-center { content: "Practice Revenue Blueprint — Confidential — Page " counter(page) " of " counter(pages); font-size: 8pt; color: #8a8a8a; }
 }
 * { box-sizing: border-box; }
 body { font-family: Georgia, 'Times New Roman', serif; color: #222; font-size: 10pt; line-height: 1.4; margin: 0; }
@@ -89,7 +89,7 @@ def render(results: dict, selfcheck_report: dict, selfcheck_text: str) -> str:
     opt = results["scenarios"]["optimistic"]
     paths = results["operational_paths"]
     today = datetime.date.today().strftime("%B %d, %Y")
-    firm = inp.prepared_by or "[Your Firm Name]"
+    firm = inp.prepared_by or "Campbell3, LLC"
 
     status_badge = ('<span class="passbadge">VERIFIED</span>' if RATE_TABLE_STATUS == "VERIFIED"
                     else '<span class="provisional">RATES PROVISIONAL — VERIFY BEFORE CLIENT DELIVERY</span>')
@@ -100,7 +100,7 @@ def render(results: dict, selfcheck_report: dict, selfcheck_text: str) -> str:
     <div class="cover">
       <div class="brand">{firm}</div>
       <div class="rule"></div>
-      <h1>Workflow Fit Blueprint</h1>
+      <h1>Practice Revenue Blueprint</h1>
       <div class="sub">Uncaptured Medicare Care-Management Revenue Analysis</div>
       <div class="meta">
         <div><strong>Prepared for:</strong> {inp.practice_name}</div>
@@ -447,7 +447,7 @@ def render(results: dict, selfcheck_report: dict, selfcheck_text: str) -> str:
 
     body = "\n".join(h)
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
-<title>Workflow Fit Blueprint — {inp.practice_name}</title>
+<title>Practice Revenue Blueprint — {inp.practice_name}</title>
 <style>{CSS}</style></head><body>{body}</body></html>"""
 
 

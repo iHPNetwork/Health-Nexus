@@ -14,7 +14,7 @@ Input JSON schema (the five numbers plus labeling):
 {
   "practice_name": "Westbrook Family Medicine",
   "prepared_for": "Dr. ____",
-  "prepared_by": "[Your Firm Name]",
+  "prepared_by": "Campbell3, LLC",
   "state": "Ohio",
   "physicians": 4,
   "panel_size": 7500,
@@ -38,7 +38,7 @@ from rates import RATE_TABLE_STATUS
 WESTBROOK = {
     "practice_name": "Westbrook Family Medicine",
     "prepared_for": "Dr. [Practice Lead]",
-    "prepared_by": "[Your Firm Name]",
+    "prepared_by": "Campbell3, LLC",
     "state": "[State]",
     "physicians": 4,
     "panel_size": 7500,
@@ -110,7 +110,7 @@ def generate(data: dict, out_dir: str) -> dict:
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Generate a Workflow Fit Blueprint.")
+    ap = argparse.ArgumentParser(description="Generate a Practice Revenue Blueprint.")
     ap.add_argument("inputs", nargs="?", help="Path to intake JSON file")
     ap.add_argument("--demo", action="store_true", help="Build the Westbrook sample Blueprint")
     ap.add_argument("--out-dir", default=os.path.join(os.path.dirname(__file__), "..", "samples"))
